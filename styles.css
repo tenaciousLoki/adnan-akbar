@@ -6,3 +6,67 @@
 ol, ul {
     list-style: none;
 }
+
+main {
+    display: grid;
+    grid-template-areas: 
+    'about about about'
+    'projects projects projects'
+    'contact contact contact';
+    row-gap: 10px; 
+    
+}
+
+/* COME UP WITH COOL LOGO USING YOUR NAME, ASK CLAUDE/GEMINI */
+
+
+#navbar {
+    display: flex;
+    width: 100%;
+    border: 2px solid black;
+
+}
+
+#about {
+    grid-area: about;
+    border: 2px solid red;
+    width: 100%;
+}
+
+#projects {
+    grid-area: projects;
+    display: grid;
+    row-gap: 10px;
+    grid-auto-rows: auto;
+    place-items: center;
+    border: 2px solid green;
+
+}
+
+.project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid purple;
+    margin-left: 15px; 
+    width: 100%;
+}
+
+.one {
+    
+}
+
+.two {
+    
+}
+
+.three {
+    
+}
+
+#contact {
+    grid-area: contact;
+    display: flex;
+    border: 2px solid blue;
+    width: 100%;
+}

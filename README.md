@@ -1,3 +1,3 @@
-My personal website.
+My personal website. Still a work in progress...
 
 Welcome!

@@ -3,11 +3,26 @@
     padding: 0px;
 }
 
+:root {
+    --onyx: #0B0B0D;
+    --carbon-black: #1A1A1D;
+    --graphite: #2E2E33;
+    --gun-metal: #3F3F46;
+    --alabaster-grey: #E5E5E5;
+    --text-primary: rgba(229, 229, 229, 1.00);
+    --text-secondary: rgba(229, 229, 229, 0.60);   
+    --text-tertiary: rgba(229, 229, 229, 0.35);
+    --text-tags: rgba(229, 229, 229, 0.70);   
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
 ol, ul {
     list-style: none;
 }
 
 main {
+    background-color: var(--onyx);
     display: grid;
     grid-template-areas: 
     'about about about'
@@ -15,6 +30,7 @@ main {
     'contact contact contact';
     row-gap: 10px; 
     overflow-x: hidden;
+    font-family: var(--font-sans);
 }
 
 /* COME UP WITH COOL LOGO USING YOUR NAME, ASK CLAUDE/GEMINI */
@@ -27,12 +43,24 @@ main {
     margin-bottom: 5px; 
     width: 100%;
     border: 2px solid black;
-    background-color: grey;
+    background-color: var(--carbon-black);
     padding-bottom: 5px;
 }
 
 #logo-img {
     background-color: yellow;
+}
+
+#header {
+    background-color: var(--carbon-black);
+}
+
+.name-text {
+    color: var(--text-primary);
+}
+
+.bio-text {
+    color: var(--text-secondary);
 }
 
 #navbar {
@@ -41,12 +69,15 @@ main {
     width: 100%;
     position: fixed;
     right: 15px;
+    
 }
 
-#nav-links {
+#nav-links, #nav-links a {
     display: flex;
+    color: var(--text-primary);
     gap: 25px;
 }
+
 
 #about {
     grid-area: about;
@@ -88,13 +119,26 @@ main {
     border: 2px solid purple;
     width: 92.5%;
     gap: 5px;
-    
+    background-color: var(--graphite);
+    border-color: var(--gun-metal);
+}
+
+.project-tile-title {
+    color: var(--text-primary);
+}
+
+.project-info {
+    color: var(--text-secondary);
 }
 
 .tags {
     display: flex;
     flex-direction: row;
     gap: 2px;
+    background-color: var(--gun-metal);
+    border-color: var(--gun-metal);
+    color: var(--text-tags);
+    font-family: var(--font-mono);
 }
 
 .html-tag {
@@ -126,8 +170,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid blue;
     width: 100%;
+    background-color: var(--carbon-black);
+    border: 2px solid;
+    border-top-color: var(--gun-metal);
 }
 
 #contact-links {
@@ -140,4 +186,8 @@ main {
     margin: 5px 0px 5px 0px;
     border: 2px solid black;
     gap: 5px;
+}
+
+#copyright {
+    color: var(--text-tertiary);
 }

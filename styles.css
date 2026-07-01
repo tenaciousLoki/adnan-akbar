@@ -29,7 +29,7 @@ main {
     'projects projects projects'
     'contact contact contact';
     row-gap: 10px; 
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: var(--font-sans);
 }
 
@@ -37,8 +37,9 @@ main {
 
 
 #header {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--carbon-black);
     position: fixed;
     margin-bottom: 5px; 
     width: 100%;
@@ -47,12 +48,17 @@ main {
     padding-bottom: 5px;
 }
 
-#logo-img {
-    background-color: yellow;
-}
-
-#header {
-    background-color: var(--carbon-black);
+.logo {
+    position: relative;
+    left: 10%;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    text-shadow: 1px 1px 7px whitesmoke;
+    color: white;
+    font-size: 18px;
+    font-weight: 400px;
+    letter-spacing: 0.28rem;
+    word-spacing: -0.5rem;
 }
 
 .name-text {
@@ -63,21 +69,22 @@ main {
     color: var(--text-secondary);
 }
 
-#navbar {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    position: fixed;
-    right: 15px;
-    
+#nav-links {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    word-spacing: 1.3rem;
 }
 
 #nav-links, #nav-links a {
-    display: flex;
     color: var(--text-primary);
-    gap: 25px;
+    text-decoration: none;
 }
 
+#nav-links a:hover {
+    animation: darken-on-hover 0.1s linear;
+    animation-fill-mode: forwards;
+}
 
 #about {
     grid-area: about;
@@ -87,7 +94,7 @@ main {
     gap: 20px;
     border: 2px solid red;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 #author-img {
@@ -190,4 +197,15 @@ main {
 
 #copyright {
     color: var(--text-tertiary);
+}
+
+/* animations section */
+@keyframes darken-on-hover {
+    0% {
+        color: var(--text-primary);
+    }
+
+    100% {
+        color: var(--text-secondary);
+    }
 }

@@ -76,13 +76,14 @@ main {
     word-spacing: 1.3rem;
 }
 
-#nav-links, #nav-links a {
+#nav-links a {
     color: var(--text-primary);
     text-decoration: none;
+    transition: color 0.2s ease-in-out 0ms;
 }
 
 #nav-links a:hover {
-    animation: darken-on-hover 0.1s linear;
+    color: var(--text-secondary);
     animation-fill-mode: forwards;
 }
 

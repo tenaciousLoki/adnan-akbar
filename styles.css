@@ -95,7 +95,6 @@ main {
 
 #nav-links a:hover {
     color: var(--text-secondary);
-    animation-fill-mode: forwards;
 }
 
 #nav-links a:active {
@@ -112,6 +111,7 @@ main {
     width: 100%;
     margin-top: 60px;
     padding-block: var(--space-6);
+    margin-bottom: 3rem; 
 }
 
 #author-details {
@@ -133,7 +133,7 @@ main {
     height: 300px;
 }
 
-#contact-links-1 svg {
+#contact-links-1 svg, .project-links svg {
     color: var(--text-secondary);
     transition: color 0.2s ease-in-out;
     transform: scale(2);
@@ -145,7 +145,7 @@ main {
     transform: scale(1.5);
 }
 
-#contact-links-1 svg:hover, #contact-links-2 svg:hover {
+#contact-links-1 svg:hover, #contact-links-2 svg:hover, .project-links svg:hover {
     color: var(--text-primary);
 }
 
@@ -167,21 +167,28 @@ main {
     display: grid;
     row-gap: 15px;
     place-items: center;
-    border: 2px solid green;
     padding-block: var(--space-6);
+    margin-bottom: 3rem;
 }
 
 .project-tile {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--space-3) 5px var(--space-3) 5px;
-    border: 2px solid purple;
-    width: 92.5%;
-    gap: 5px;
+    width: 85%;
+    padding: var(--space-3) 0px var(--space-3) 1.5rem;
+    border: 2px solid var(--gun-metal);
+    border-radius: 12px;
     background-color: var(--graphite);
-    border-color: var(--gun-metal);
+    gap: 5px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
     
+}
+
+.project-tile:hover, .project-tile:active {
+    transform: scale(1.03);
+    box-shadow: 1px 5px 8px 2px rgba(255,255,255,0.2), 2px 7px 20px 4px rgba(255,255,255,0.19); 
+    /* animation: shadow-ripple 1s ease-in-out infinite; */
 }
 
 .project-tile:not(.one) {
@@ -197,43 +204,47 @@ main {
     color: var(--text-secondary);
 }
 
-.tags {
+#tags-article {
     display: flex;
     flex-direction: row;
     gap: var(--space-1);
-    background-color: var(--gun-metal);
-    border-color: var(--gun-metal);
-    color: var(--text-tags);
-    font-family: var(--font-mono);
     margin-top: var(--space-2);
 }
 
-.html-tag {
+.tags {
+    border-color: var(--gun-metal);
+    color: var(--text-tags);
+    font-family: var(--font-mono);
+}
+
+.html-tag, .css-tag, .js-tag {
+    background-color: var(--gun-metal);
+    border-radius: 7px;
+    padding: 4px 12px 4px 12px;
 
 }
 
-.css-tag {
-
+.html-tag::before {
+    content: "HTML";
 }
 
-.js-tag {
-
+.css-tag::before {
+    content: "CSS";
 }
 
-.one {
-    
+.js-tag::before {
+    content: "JavaScript";
 }
 
-.two {
-    
-}
-
-.three {
-    
-}
-
-.project-link {
+.project-info-divider {
     margin-top: var(--space-3);
+    border-top: 2px solid var(--gun-metal);
+    width: 92.5%;
+}
+
+.project-links {
+    margin-top: var(--space-3);
+    padding-left: 0.8rem;
 }
 
 #contact {
@@ -258,12 +269,16 @@ main {
 
 /* animations section */
 
-@keyframes darken-on-hover {
+@keyframes float {
     0% {
-        color: var(--text-primary);
+        box-shadow: 0 4px 8px 2px rgba(255,255,255,0.2), 0 6px 20px 4px rgba(255,255,255,0.19); 
     }
 
+    50% {
+        box-shadow: 0 4px 8px 2px rgba(255,255,255,0.2), 0 6px 20px 4px rgba(255,255,255,0.19); 
+    }
+    
     100% {
-        color: var(--text-secondary);
+        box-shadow: 0 4px 8px 2px rgba(255,255,255,0.2), 0 6px 20px 4px rgba(255,255,255,0.19); 
     }
 }
